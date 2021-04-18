@@ -1,0 +1,9 @@
+handlers:
+- name: iterate
+- name: welcome
+- name: iterateOrCreate
+- name: create
+- name: validateTopic
+httpsEndpoint:
+  baseUrl: https://a6511783fb4b.ngrok.io/fulfillment
+  endpointApiVersion: 2

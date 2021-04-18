@@ -1,0 +1,17 @@
+<div id="contact" v-cloak>
+    <div class="container-fluid pt-5 pb-5">
+      <h1 class="text-center">Hey <%= user.email %>!</h1>
+      <div style="max-width:  650px;" class="mx-auto" v-if="!cloudSuccess">
+        <p class="text-center"><b><%= client.name %></b> is requesting access to your account.</p>
+        <p class="text-center">Do you approve?</p>
+
+        <form action="/oauth/authorize/decision" method="POST">
+            <input name="transaction_id" type="hidden" value="<%= transactionID %>">
+            <input type="hidden" id="_csrf" name="_csrf" value="<%= _csrf %>" />
+            <div class="form-group">
+                <input class="btn btn-dark btn-lg btn-block" type="submit" value="Allow" id="allow">
+                <input class="btn btn-dark btn-lg btn-block" type="submit" value="Deny" name="cancel" id="deny">
+            </div>
+        </form>
+    </div>
+</div>

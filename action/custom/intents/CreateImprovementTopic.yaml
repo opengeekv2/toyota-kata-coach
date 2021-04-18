@@ -1,0 +1,10 @@
+parameters:
+- name: name
+  type:
+    name: FreeFormTextType
+trainingPhrases:
+- Add new topic ($name 'predictability' auto=false)
+- Add new topic
+- The new topic will be ($name 'predictability' auto=false)
+- Create new topic ($name 'predictability' auto=false)
+- Create a new topic

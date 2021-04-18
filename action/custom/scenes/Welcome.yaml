@@ -1,0 +1,18 @@
+conditionalEvents:
+- condition: session.params.improvementTopics == true
+  transitionToScene: ListOrNewImprovementTopic
+- condition: "true"
+  handler:
+    staticPrompt:
+      candidates:
+      - promptResponse:
+          firstSimple:
+            variants:
+            - speech: You don''t have any improvement topics. Please proceed to create
+                the first one.
+  transitionToScene: CreateImprovementTopic
+intentEvents:
+- intent: Iterate
+  transitionToScene: IterateSlotFilling
+onEnter:
+  webhookHandler: welcome

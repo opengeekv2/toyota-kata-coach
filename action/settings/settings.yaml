@@ -1,0 +1,25 @@
+accountLinking:
+  appClientId: UG5R9CBYIK
+  authGrantType: AUTH_CODE
+  authorizationUrl: https://b9c551b63ec4.ngrok.io/oauth/authorize
+  linkingType: OAUTH
+  tokenUrl: https://b9c551b63ec4.ngrok.io/oauth/token
+category: PRODUCTIVITY
+defaultLocale: en
+localizedSettings:
+  developerEmail: marcmaurialloza@gmail.com
+  developerName: Eixampla
+  displayName: Let's do Toyota Kata
+  fullDescription: It helps you apply the Toyota Kata to improve your scientific thinking
+  privacyPolicyUrl: https://a91a7557-6661-42fc-8cb3-5cdd9282aed6.clouding.host
+  pronunciation: Let's do Toyota Kaata
+  sampleInvocations:
+  - Let's do Toyota Kaata
+  - Let's practice Toyota Kaata
+  - Let's do a round of Toyota Kaata
+  - open Toyota Kata
+  - coach me with Toyota Kata
+  shortDescription: Helps you practice The Toyota Kata
+  smallLogoImage: https://lh3.googleusercontent.com/iG5PZJFYfI_EEZGfuqDzS4CoS6iOoJSDvXOIsvGhEn-zqBOMJ7IS9N8gkckp54NnJjjGnzPfFhuApg
+  voice: female_1
+projectId: toyota-kata-coach-0

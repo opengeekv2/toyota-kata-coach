@@ -1,0 +1,8 @@
+parameters:
+- name: topic
+  type:
+    name: FreeFormTextType
+trainingPhrases:
+- 'I want to iterate ($topic ''my daily standups'' auto=false) '
+- Iterate ($topic 'my daily standups' auto=false)
+- 'Let''s iterate ($topic ''daily standups'' auto=false) '

@@ -1,0 +1,41 @@
+conditionalEvents:
+- condition: scene.slots.status == "FINAL"
+  handler:
+    staticPrompt:
+      candidates:
+      - promptResponse:
+          firstSimple:
+            variants:
+            - speech: Iteration done
+    webhookHandler: iterate
+  transitionToScene: actions.scene.END_CONVERSATION
+slots:
+- commitBehavior:
+    writeSessionParam: topic
+  name: topic
+  promptSettings:
+    initialPrompt:
+      staticPrompt:
+        candidates:
+        - promptResponse:
+            firstSimple:
+              variants:
+              - speech: Enter the response that users will see or hear when this event
+                  occurs
+  required: true
+  type:
+    name: FreeFormTextType
+- commitBehavior:
+    writeSessionParam: experiment
+  name: experiment
+  promptSettings:
+    initialPrompt:
+      staticPrompt:
+        candidates:
+        - promptResponse:
+            firstSimple:
+              variants:
+              - speech: What are you trying to do to improve this topic?
+  required: true
+  type:
+    name: FreeFormTextType

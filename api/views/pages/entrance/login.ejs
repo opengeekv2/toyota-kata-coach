@@ -1,0 +1,33 @@
+<div id="login" v-cloak>
+  <div class="container-fluid pt-5 pb-5">
+    <h1 class="text-center">Sign in to your account</h1>
+    <div style="max-width: 450px;" class="mx-auto">
+      <hr/>
+      <form method="post" action="/login" :syncing.sync="syncing" :form-data="formData" :form-rules="formRules" :form-errors.sync="formErrors" @submitted="submittedForm()">
+        
+        <div class="form-group">
+          <input v-validate="'required|email'" name="emailAddress" type="email" class="form-control" placeholder="Email address" :class="[formErrors.emailAddress ? 'is-invalid' : '']" v-model.trim="formData.emailAddress" autocomplete="email" focus-first>
+          <div class="invalid-feedback" style="display: block !important;" v-for="error in errors.collect('emailAddress')">{{ error }}</div>
+        </div>
+        <div class="form-group">
+          <input v-validate="'required'" name="password" type="password" class="form-control" placeholder="Password" :class="[formErrors.password ? 'is-invalid' : '']" v-model.trim="formData.password" autocomplete="current-password">
+          <div class="invalid-feedback" style="display: block !important;" v-for="error in errors.collect('password')">{{ error }}</div>
+        </div>
+        <div class="form-group form-check">
+          <input class="form-check-input" type="checkbox" id="remember" name="rememberMe" v-model="formData.rememberMe"/>
+          <label class="form-check-label" for="remember">Remember me</label>
+        </div>
+        <% if (message) { %>
+        <div class="invalid-feedback" style="display: block !important;"><%- message %></div>
+        <% } %>
+        <div class="form-group">
+          <input type="hidden" id="redirect" name="redirect" v-model="formData.redirect" />
+          <input type="hidden" id="_csrf" name="_csrf" value="<%= _csrf %>" />
+          <button type="submit" :syncing="syncing" class="btn-dark btn-lg btn-block">Sign in</button>
+        </div>
+      </form>
+      <p class="text-center"><a href="/password/forgot">Forgot your password?</a></p>
+    </div>
+  </div>
+</div>
+<%- /* Expose locals as `window.SAILS_LOCALS` :: */ exposeLocalsToBrowser() %>

@@ -1,0 +1,28 @@
+conditionalEvents:
+- condition: scene.slots.status == "FINAL"
+  handler:
+    staticPrompt:
+      candidates:
+      - promptResponse:
+          firstSimple:
+            variants:
+            - speech: Topic created
+    webhookHandler: create
+  transitionToScene: actions.scene.END_CONVERSATION
+onSlotUpdated:
+  webhookHandler: validateTopic
+slots:
+- commitBehavior:
+    writeSessionParam: name
+  name: name
+  promptSettings:
+    initialPrompt:
+      staticPrompt:
+        candidates:
+        - promptResponse:
+            firstSimple:
+              variants:
+              - speech: How will you call this improvement topic?
+  required: true
+  type:
+    name: FreeFormTextType
